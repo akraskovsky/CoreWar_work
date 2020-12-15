@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   corewar.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fprovolo <fprovolo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jconcent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 17:00:38 by fprovolo          #+#    #+#             */
-/*   Updated: 2020/12/11 17:23:37 by fprovolo         ###   ########.fr       */
+/*   Updated: 2020/12/15 11:27:27 by jconcent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 int		main()
 {
-    testhello();
+    t_corewar cv;
+
+	init_structure(&cv);
+	print_arena(&cv);
     return (0);
 }
