@@ -6,7 +6,7 @@
 #    By: fprovolo <fprovolo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/11 16:09:01 by fprovolo          #+#    #+#              #
-#    Updated: 2020/12/14 18:23:50 by fprovolo         ###   ########.fr        #
+#    Updated: 2020/12/17 19:59:22 by fprovolo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,10 @@ NAME2 = corewar
 ASM_FILES =	asm\
 
 VM_FILES = 	corewar\
-			testhello\
+			init_arena\
+			parse_args\
+			tools\
+			conversions\
 
 # имена файлов без расширений
 
@@ -37,7 +40,7 @@ OBJ_ASM = $(addprefix $(OBJ_PATH_ASM), $(addsuffix .o, $(ASM_FILES)))
 OBJ_VM = $(addprefix $(OBJ_PATH_VM), $(addsuffix .o, $(VM_FILES)))
 
 LIBFT = $(LFT_PATH)libft.a
-INCL = $(INC_PATH)op.h
+INCL = $(INC_PATH)corewar.h
 
 .PHONY: all clean fclean re
 

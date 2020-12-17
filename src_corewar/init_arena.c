@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_arena.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jconcent <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fprovolo <fprovolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/14 18:52:39 by jconcent          #+#    #+#             */
-/*   Updated: 2020/12/15 11:27:25 by jconcent         ###   ########.fr       */
+/*   Updated: 2020/12/16 17:53:34 by fprovolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,7 @@ void init_structure(t_corewar *cv)
 		ft_memset(cv->players[i].code, 0, CHAMP_MAX_SIZE);
 		i++;
 	}
+	cv->last_live = 0;
+	cv->dump_stop = -1;
+	cv->visual = 0;
 }
