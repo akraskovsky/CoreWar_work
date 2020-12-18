@@ -6,7 +6,7 @@
 /*   By: fprovolo <fprovolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 17:07:52 by fprovolo          #+#    #+#             */
-/*   Updated: 2020/12/17 20:17:09 by fprovolo         ###   ########.fr       */
+/*   Updated: 2020/12/18 15:35:24 by fprovolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 typedef struct s_player
 {
 	int				nb_player;
+	int				code_len;
 	unsigned char	name[PROG_NAME_LENGTH + 1];
 	unsigned char	comment[COMMENT_LENGTH + 1];
 	unsigned char	code[CHAMP_MAX_SIZE];
