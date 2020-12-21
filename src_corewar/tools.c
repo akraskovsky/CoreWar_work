@@ -6,11 +6,26 @@
 /*   By: fprovolo <fprovolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 17:30:43 by fprovolo          #+#    #+#             */
-/*   Updated: 2020/12/17 18:14:57 by fprovolo         ###   ########.fr       */
+/*   Updated: 2020/12/21 16:39:37 by fprovolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "corewar.h"
+
+void	print_hex_by32(unsigned char *area, int len)
+{
+	int	i;
+
+	i = 0;
+	while (i < len)
+	{
+		if (i % 32 ==  0 && i != 0)
+			ft_printf("\n");
+		ft_printf("%02x ", area[i]);
+		i++;
+	}
+	ft_printf("\n");
+}
 
 void    print_usage_exit(char *message)
 {

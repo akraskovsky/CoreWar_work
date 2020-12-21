@@ -6,7 +6,7 @@
 /*   By: fprovolo <fprovolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 17:07:52 by fprovolo          #+#    #+#             */
-/*   Updated: 2020/12/18 15:35:24 by fprovolo         ###   ########.fr       */
+/*   Updated: 2020/12/21 17:29:41 by fprovolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,15 @@ typedef struct s_corewar
 }	t_corewar;
 
 void	init_structure(t_corewar *cv);
+void	init_arena(t_corewar *cv);
 void	print_arena(t_corewar *cv);
+void	print_intro(t_corewar *cv);
 void	print_usage_exit(char *message);
 void	terminate(char *message);
 void	parse_args(t_corewar *cv, int argc, char **argv);
 int		is_positive_int(char *str);
 int		ft_to_int(uint32_t src);
 int		ft_read32(int fd);
+void	print_hex_by32(unsigned char *area, int len);
 
 #endif

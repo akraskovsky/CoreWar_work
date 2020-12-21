@@ -6,7 +6,7 @@
 /*   By: fprovolo <fprovolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/14 18:52:39 by jconcent          #+#    #+#             */
-/*   Updated: 2020/12/16 17:53:34 by fprovolo         ###   ########.fr       */
+/*   Updated: 2020/12/21 17:33:51 by fprovolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,25 +31,24 @@ void	print_arena(t_corewar *cv)
 	ft_printf(" \n");
 }
 
-// void	init_arena(t_corewar *cv)
-// {
-// 	int space;
-// 	int i;
-// 	int n;
+void	init_arena(t_corewar *cv)
+{
+	int space;
+	int i;
+	int n;
 
-// 	space = MEM_SIZE / cv->nplayer;
-// 	i = 0;
-// 	n = 0;
-// 	while (n < cv->nplayer)
-// 	{
-// 
-// 		Установка стартовых позиций игроков
-// 
-// 		i += space;
-// 		n++;
-// 	}
-// 	сv->last_live = сv->nplayer - 1;
-// }
+	space = MEM_SIZE / cv->nb_players;
+	i = 0;
+	n = 0;
+	while (n < cv->nb_players)
+	{
+		// Установка стартовых позиций игроков
+		ft_memcpy(cv->arena + i, cv->players[n].code, cv->players[n].code_len);
+		i += space;
+		n++;
+	}
+	cv->last_live = cv->nb_players - 1;
+}
 
 void init_structure(t_corewar *cv)
 {
@@ -69,4 +68,22 @@ void init_structure(t_corewar *cv)
 	cv->last_live = 0;
 	cv->dump_stop = -1;
 	cv->visual = 0;
+}
+
+void	print_intro(t_corewar *cv)
+{
+	int	i;
+
+	ft_printf("\nIntroducing contestants...\n");
+	i = 0;
+	while (i < cv->nb_players)
+	{
+		ft_printf("* Player %d, ", cv->players[i].nb_player);
+		ft_printf("weighting %d bytes, ", cv->players[i].code_len);
+		ft_printf("\"%s\" ", cv->players[i].name);
+		ft_printf("(\"%s\") !\n", cv->players[i].comment);
+		// print_hex_by32(cv->players[i].code, cv->players[i].code_len);
+		i++;
+	}
+	ft_printf("\n");
 }
