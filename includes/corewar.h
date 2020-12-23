@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   corewar.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fprovolo <fprovolo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jconcent <jconcent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 17:07:52 by fprovolo          #+#    #+#             */
-/*   Updated: 2020/12/21 17:29:41 by fprovolo         ###   ########.fr       */
+/*   Updated: 2020/12/23 09:09:52 by jconcent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,23 @@ typedef struct s_player
 typedef struct s_corewar
 {
 	unsigned char	arena[MEM_SIZE];
-	t_player		players[MAX_PLAYERS];
+	t_player		players	[MAX_PLAYERS];
 	int 			nb_players;
 	int 			last_live;
 	int				dump_stop;
 	int				visual;
+	int				nb_process;
 }	t_corewar;
+
+typedef struct s_game
+{
+	int nb_process;			// номер активного игрового процесса, соответсвуте игроку
+	int carry;				// Положение каретки
+	int reg[REG_NUMBER];	// 16 операций (регистры)
+	int op;					// Операция, которая выполняется
+	int live_count;			// оставшиеся жизни
+	unsigned char next_op;	// Следующая на выполнение операция
+} t_game;
 
 void	init_structure(t_corewar *cv);
 void	init_arena(t_corewar *cv);
