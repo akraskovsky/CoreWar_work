@@ -29,6 +29,7 @@ void init_structure(t_corewar *cv)
 	while (i < MAX_PLAYERS)
 	{
 		cv->players[i].nb_player = 0;
+		cv->players[i].nb_player_request = 0;
 		ft_memset(cv->players[i].name, 0, PROG_NAME_LENGTH);
 		ft_memset(cv->players[i].comment, 0, COMMENT_LENGTH);
 		ft_memset(cv->players[i].code, 0, CHAMP_MAX_SIZE);

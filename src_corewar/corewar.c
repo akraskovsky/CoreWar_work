@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   corewar.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jconcent <jconcent@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fprovolo <fprovolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 17:00:38 by fprovolo          #+#    #+#             */
-/*   Updated: 2020/12/23 08:59:26 by jconcent         ###   ########.fr       */
+/*   Updated: 2020/12/24 22:13:04 by fprovolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int		main(int argc, char **argv)
 		print_usage_exit("Too few arguments");
 	init_structure(&cv);
 	parse_args(&cv, argc, argv);
-	print_arena(&cv);
+	print_intro(&cv);					// представление игроков перед игрой
+	if (cv.visual)
+		print_arena(&cv);
 	return (0);
 }

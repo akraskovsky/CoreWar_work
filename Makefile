@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jconcent <jconcent@student.42.fr>          +#+  +:+       +#+         #
+#    By: fprovolo <fprovolo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/11 16:09:01 by fprovolo          #+#    #+#              #
-#    Updated: 2020/12/23 09:10:50 by jconcent         ###   ########.fr        #
+#    Updated: 2020/12/24 21:35:28 by fprovolo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,8 @@ VM_FILES = 	corewar\
 			tools\
 			conversions\
 			init_structure\
+			parse_player\
+			testprint\
 
 # имена файлов без расширений
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_arena.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jconcent <jconcent@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fprovolo <fprovolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/14 18:52:39 by jconcent          #+#    #+#             */
-/*   Updated: 2020/12/23 08:59:12 by jconcent         ###   ########.fr       */
+/*   Updated: 2020/12/24 22:20:53 by fprovolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	print_intro(t_corewar *cv)
 	i = 0;
 	while (i < cv->nb_players)
 	{
-		ft_printf("* Player %d, ", cv->players[i].nb_player);
+		ft_printf("* Player %d, ", i + 1);
 		ft_printf("weighting %d bytes, ", cv->players[i].code_len);
 		ft_printf("\"%s\" ", cv->players[i].name);
 		ft_printf("(\"%s\") !\n", cv->players[i].comment);

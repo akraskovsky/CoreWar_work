@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   corewar.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jconcent <jconcent@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fprovolo <fprovolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 17:07:52 by fprovolo          #+#    #+#             */
-/*   Updated: 2020/12/23 09:09:52 by jconcent         ###   ########.fr       */
+/*   Updated: 2020/12/24 21:35:28 by fprovolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@
 typedef struct s_player
 {
 	int				nb_player;
+	int				nb_player_request;
 	int				code_len;
 	unsigned char	name[PROG_NAME_LENGTH + 1];
 	unsigned char	comment[COMMENT_LENGTH + 1];
 	unsigned char	code[CHAMP_MAX_SIZE];
-	struct s_player	*previous;
 }	t_player;
 
 typedef struct s_corewar
@@ -59,5 +59,7 @@ int		is_positive_int(char *str);
 int		ft_to_int(uint32_t src);
 int		ft_read32(int fd);
 void	print_hex_by32(unsigned char *area, int len);
+void	parse_player(t_corewar *cv, char *f_name);
+void	test_print(t_corewar *cv);
 
 #endif
