@@ -1,23 +1,26 @@
 #include "corewar.h"
 
-/*
-
-Расширю в структуру t_list 
-
 void init_game(t_corewar *cv)
 {
     t_game *game;
+	int i;
 
-    game->carry = 0;
-    game->nb_process = cv->nb_process;
-    game->next_op = -1;
-    game->op = 0;
-    game->live_count = 0;
-    ft_memset(game->reg, 0, (REG_NUMBER) * sizeof(int));
-    game->reg[0] = cv->players[0].nb_player;
+	i = 0;
+	while (i < cv->nb_players)
+	{
+		++cv->nb_process;
+		++cv->nb_process_alive;
+		ft_lstadd(&(cv->game_list), ft_lstnew(&game, sizeof(t_game)));
+		((t_game *)cv->game_list->content)->carry = 0;
+    	((t_game *)cv->game_list->content)->nb_process = cv->nb_process;
+    	((t_game *)cv->game_list->content)->next_op = -1;
+    	((t_game *)cv->game_list->content)->op = 0;
+    	((t_game *)cv->game_list->content)->live_count = 0;
+    	ft_memset(&(((t_game *)cv->game_list->content)->reg), 0, (REG_NUMBER) * sizeof(int));
+    	((t_game *)cv->game_list->content)->reg[0] = cv->players[0].nb_player;
+		i++;
+	}
 }
-
-*/
 
 void init_structure(t_corewar *cv)
 {

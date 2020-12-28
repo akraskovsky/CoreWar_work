@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   corewar.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fprovolo <fprovolo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jconcent <jconcent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 17:07:52 by fprovolo          #+#    #+#             */
-/*   Updated: 2020/12/24 21:35:28 by fprovolo         ###   ########.fr       */
+/*   Updated: 2020/12/28 09:54:23 by jconcent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,13 @@ typedef struct s_corewar
 	unsigned char	arena[MEM_SIZE];
 	t_player		players	[MAX_PLAYERS];
 	int 			nb_players;
+	int				nb_process;
+	id_t			nb_process_alive;
 	int 			last_live;
 	int				dump_stop;
 	int				visual;
 	int				nb_process;
+	t_list			*game_list;
 }	t_corewar;
 
 typedef struct s_game
