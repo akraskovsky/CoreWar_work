@@ -12,10 +12,12 @@ void init_game(t_corewar *cv)
 		++cv->nb_process_alive;
 		ft_lstadd(&(cv->game_list), ft_lstnew(&game, sizeof(t_game)));
 		((t_game *)cv->game_list->content)->carry = 0;
-    	((t_game *)cv->game_list->content)->nb_process = cv->nb_process;
+    	((t_game *)cv->game_list->content)->n_process = cv->nb_process;
     	((t_game *)cv->game_list->content)->next_op = -1;
     	((t_game *)cv->game_list->content)->op = 0;
     	((t_game *)cv->game_list->content)->live_count = 0;
+		((t_game *)cv->game_list->content)->live_since = 0;
+		((t_game *)cv->game_list->content)->process_content = cv->players[i].pc_address;
     	ft_memset(&(((t_game *)cv->game_list->content)->reg), 0, (REG_NUMBER) * sizeof(int));
     	((t_game *)cv->game_list->content)->reg[0] = cv->players[0].nb_player;
 		i++;
@@ -42,4 +44,8 @@ void init_structure(t_corewar *cv)
 	cv->dump_stop = -1;
 	cv->visual = 0;
 	cv->nb_process = 0;
+	cv->nb_cycle = 0;
+	cv->nb_cycle_mod = 0;
+	cv->ncheck = 0;
+	cv->nb_cycle_to_die = CYCLE_TO_DIE;
 }

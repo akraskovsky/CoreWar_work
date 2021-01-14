@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_arena.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fprovolo <fprovolo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jconcent <jconcent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/14 18:52:39 by jconcent          #+#    #+#             */
-/*   Updated: 2020/12/24 22:20:53 by fprovolo         ###   ########.fr       */
+/*   Updated: 2021/01/14 11:27:28 by jconcent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	init_arena(t_corewar *cv)
 	{
 		// Установка стартовых позиций игроков
 		ft_memcpy(cv->arena + i, cv->players[n].code, cv->players[n].code_len);
+		cv->players[n].pc_address = i;
 		i += space;
 		n++;
 	}
