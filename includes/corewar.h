@@ -6,7 +6,7 @@
 /*   By: jconcent <jconcent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 17:07:52 by fprovolo          #+#    #+#             */
-/*   Updated: 2021/01/14 11:39:42 by jconcent         ###   ########.fr       */
+/*   Updated: 2021/01/18 09:51:54 by jconcent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # define PC			(((t_game *)game->content)->process_content)
 # define OP			(((t_game *)game->content)->op)
 # define LIVE_SINCE (((t_game *)game->content)->live_since)
+# define LIVE		(((t_game *)game->content)->live_count)
 
 typedef struct s_player
 {
@@ -29,6 +30,8 @@ typedef struct s_player
 	int				nb_player_request;
 	int				code_len;
 	int				pc_address;
+	int				nb_live;
+	int				last_live_cycle;
 	unsigned char	name[PROG_NAME_LENGTH + 1];
 	unsigned char	comment[COMMENT_LENGTH + 1];
 	unsigned char	code[CHAMP_MAX_SIZE];
