@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   corewar.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jconcent <jconcent@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fprovolo <fprovolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 17:07:52 by fprovolo          #+#    #+#             */
-/*   Updated: 2021/01/18 09:51:54 by jconcent         ###   ########.fr       */
+/*   Updated: 2021/01/26 16:52:15 by fprovolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,13 +60,28 @@ typedef struct s_game
 {
 	int n_process;			// номер активного игрового процесса, соответсвуте игроку
 	int process_content;
-	int carry;				// Положение каретки
+	int carry;				// Положение каретки  ?????
 	int reg[REG_NUMBER];	// 16 операций (регистры)
 	int op;					// Операция, которая выполняется
 	int live_count;			// оставшиеся жизни
 	int live_since;
 	unsigned char next_op;	// Следующая на выполнение операция
 } t_game;
+
+typedef struct s_op
+{
+  char  *name;
+  unsigned char nb_arg;
+  t_arg_type args[3];
+  unsigned char opcode;
+  unsigned int cycle;
+  char *description;
+  unsigned char octal;
+  unsigned char label;
+  void  (*f)(t_corewar *cv, t_list *game);
+} t_op;
+
+extern t_op op_tab[17];
 
 void	init_structure(t_corewar *cv);
 void	init_arena(t_corewar *cv);
@@ -81,5 +96,7 @@ int		ft_read32(int fd);
 void	print_hex_by32(unsigned char *area, int len);
 void	parse_player(t_corewar *cv, char *f_name);
 void	test_print(t_corewar *cv);
+
+void	op_live(t_corewar *cv, t_list *game);
 
 #endif

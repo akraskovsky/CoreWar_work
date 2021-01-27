@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   op.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jconcent <jconcent@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fprovolo <fprovolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:33:27 by zaz               #+#    #+#             */
-/*   Updated: 2021/01/18 09:54:24 by jconcent         ###   ########.fr       */
+/*   Updated: 2021/01/26 16:42:41 by fprovolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,20 +74,3 @@ typedef struct		header_s
   unsigned int		prog_size;
   char				comment[COMMENT_LENGTH + 1];
 }					header_t;
-
-typedef struct s_op
-{
-  char  *name;
-  unsigned char nb_arg;
-  t_arg_type args[3];
-  unsigned char opcode;
-  unsigned int cycle;
-  char *description;
-  unsigned char octal;
-  unsigned char label;
-  void  (*f)(t_corewar *cv, t_list *game);
-} t_op;
-
-void op_live(t_corewar *cv, t_list *game);
-
-extern t_op op_tab[17];

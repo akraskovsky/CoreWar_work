@@ -6,7 +6,7 @@
 /*   By: fprovolo <fprovolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 17:00:38 by fprovolo          #+#    #+#             */
-/*   Updated: 2020/12/24 22:13:04 by fprovolo         ###   ########.fr       */
+/*   Updated: 2021/01/26 18:04:06 by fprovolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,11 @@ int		main(int argc, char **argv)
 	init_structure(&cv);
 	parse_args(&cv, argc, argv);
 	print_intro(&cv);					// представление игроков перед игрой
+	
 	if (cv.visual)
 		print_arena(&cv);
+	
+	game_start(cv);
+	
 	return (0);
 }
